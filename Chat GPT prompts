@@ -1,0 +1,19 @@
+Generate a complex piece of [emotion] music that lasts for at least 16 bars. The music should have a [tempo] tempo. The music should have one key. The key should be a [key] key. You must send comma separated values without spaces compatible with the MIDIUtil python library. You should send nothing else. The format should be "pitch,time,duration,volume" for each note with each entry on a separate line. The music should have a melody, chords, and chord progressions. Use a combination of block chords, broken chords, and arpeggios. The melody must include passing tones, neighboring tones, repeated motifs, and variated durations. Include a little bit of repetition, but not too much.
+for example, here is the entry for one note:
+
+60,0,4,100
+For the duration, 1 means a sixteenth note, 2 means an eighth note, 4 means a quarter note, 8 means a half note, etc. All numbers must be whole numbers.
+
+You must ONLY send lines like the above. Do not send any explanation or description.
+
+
+
+Uplifting genres of music: smooth jazz, pop
+[speed]: presto for fast tempo, moderato for medium, adagio for slow
+[key]: major for a happy mood, minor for a sad mood
+
+
+angry disgust fear happy sad surprise neutral
+
+
+***Change the brackets to the corresponding words***
