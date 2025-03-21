@@ -1,0 +1,36 @@
+from midiutil import MIDIFile
+
+def create_midi_from_notes(input_lines, output_filename="music.mid"):
+    midi_file = MIDIFile(1)
+    track = 0
+    midi_file.addTrackName(track, 0, "Track")
+    midi_file.addTempo(track, 0, 240)
+    
+    for line in input_lines:
+        line = line.strip()
+        if not line:
+            continue
+        parts = line.split(',')
+        if len(parts) != 4:
+            continue
+        try:
+            pitch, start_time, duration, volume = map(int, parts)
+        except ValueError:
+            continue
+        midi_file.addNote(track, 0, pitch, start_time, duration, volume)
+    
+    with open(output_filename, "wb") as f:
+        midi_file.writeFile(f)
+    print(f"MIDI file saved as {output_filename}")
+
+data = []
+while True:
+    line = input().strip()
+    if line == "q":
+        break
+    if line:
+        # Split the line by whitespace and filter out any empty strings.
+        entries = [item.strip() for item in line.split() if item.strip()]
+        data.extend(entries)
+
+create_midi_from_notes(data)
